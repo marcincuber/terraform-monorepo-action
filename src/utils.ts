@@ -65,9 +65,7 @@ export function getModulePaths<T extends Record<string, unknown>>(
   const result = files?.reduce<string[]>((paths, file) => {
     const { dir, base, ext } = parse(file[pathProp] as string)
     // const globalIgnore = ['.github', '.ci', '.terraform']
-    console.log(dir)
-    console.log(base)
-    console.log(ext)
+
     if (
       dir.includes('.github') ||
       dir.includes('.ci') ||
@@ -76,7 +74,6 @@ export function getModulePaths<T extends Record<string, unknown>>(
       return paths
     }
     if (ext === '.tf' || ext === '.tfvars' || ext === '.hcl' || base === '.terraform.lock.hcl') {
-      console.log(dir)
       paths.push(dir)
     }
     return paths
