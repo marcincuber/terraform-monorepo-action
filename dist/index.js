@@ -241,7 +241,7 @@ function getModulePaths(files, pathProp) {
             dir.includes('.terraform')) {
             return paths;
         }
-        if (ext === '.tf' || base === '.terraform.lock.hcl') {
+        if (ext === '.tf' || ext === '.tfvars' || ext === '.hcl' || base === '.terraform.lock.hcl') {
             paths.push(dir);
         }
         return paths;
