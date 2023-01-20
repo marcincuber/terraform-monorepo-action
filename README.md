@@ -9,7 +9,7 @@ jobs:
   modules:
     runs-on: ubuntu-latest
     steps:
-      - uses: theappnest/terraform-monorepo-action@master
+      - uses: marcincuber/terraform-monorepo-action@master
         id: modules
         with:
           ignore: |
